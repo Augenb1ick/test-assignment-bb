@@ -86,7 +86,7 @@ const App = () => {
             />
           }
         />
-        <Route path='*' element={<Navigate to={<Home />} />} />
+        <Route path='*' element={<Navigate to='/' replace={true} />} />
       </Routes>
     </>
   );
