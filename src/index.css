@@ -1,0 +1,95 @@
+@font-face {
+  font-family: Benzin-Bold;
+  src: url(./vendor/fonts/Benzin-Bold.ttf);
+}
+@font-face {
+  font-family: Sphere;
+  src: url(./vendor/fonts/Sphere.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: Sphere, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.starfield {
+  overflow: hidden;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.text {
+  margin: 0;
+  position: absolute;
+  z-index: 5;
+  color: rgb(181, 239, 236);
+  text-shadow: 0 0 10px rgb(181, 239, 236, 0.4);
+  text-transform: uppercase;
+  font-size: 2.5vw;
+  overflow: hidden;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-shadow: ;
+}
+
+.text_forward_animated {
+  animation: Fade 2s linear, Scale 2s linear;
+}
+
+.text_reverse_animated {
+  animation: FadeIn 2s linear, ScaleDown 2s linear;
+}
+
+@keyframes Fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes Scale {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ScaleDown {
+  0% {
+    transform: translate(-50%, -50%) scale(3);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

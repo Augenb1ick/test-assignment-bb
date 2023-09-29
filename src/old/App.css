@@ -1,0 +1,157 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: url(./images/stars-bg.jpeg);
+  background-color: black;
+}
+
+body:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.container {
+  background: url(./images/stars-bg.jpeg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  perspective: 5px;
+  perspective-origin: 50% 50%;
+  left: 50%;
+  top: 50%;
+}
+
+.show-animation .wrapper {
+  position: absolute;
+  height: 1000px;
+  width: 1000px;
+  left: -500px;
+  top: -500px;
+  transform-style: preserve-3d;
+  animation-fill-mode: forwards;
+  animation: move 6s infinite linear;
+}
+
+.wrapper:nth-child(2) {
+  animation: move 6s infinite linear;
+  animation-delay: 6s;
+}
+
+.side {
+  background: url(./images/stars-bg.jpeg);
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation-delay: 0;
+  animation: fade 6s infinite linear;
+}
+
+.wrapper:nth-child(2) .side {
+  animation-delay: 6s;
+}
+
+.side-right {
+  transform: rotateY(90deg) translateZ(500px);
+}
+
+.side-left {
+  transform: rotateY(-90deg) translateZ(500px);
+}
+
+.side-top {
+  transform: rotateX(90deg) translateZ(500px);
+}
+
+.side-bottom {
+  transform: rotateX(-90deg) translateZ(500px);
+}
+
+.side-back {
+  transform: rotateX(180deg) translateZ(500px);
+}
+
+.text {
+  position: absolute;
+  z-index: 5;
+  max-width: 100%;
+  max-height: 100%;
+  text-transform: uppercase;
+  font-size: 8.5vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  color: white;
+  opacity: 1;
+  text-align: center;
+}
+
+.show-animation .text {
+  animation: scaleText 6s infinite linear, fadeText 6s infinite linear;
+}
+
+@keyframes scaleText {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateZ(-500px) rotate(0deg);
+  }
+  100% {
+    transform: translateZ(500px) rotate(0deg);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeText {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
